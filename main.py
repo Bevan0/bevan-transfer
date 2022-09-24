@@ -22,21 +22,7 @@ def do_send():
             print("\n")
     print("File {} found successfully.".format(file_name))
     
-    ip = ""
-    while True:
-        ip = input("Enter the IP of the computer you want to send the file to: ")
-        try:
-            sock = socket.socket()
-            sock.connect((ip, PORT))
-            sock.send(bytes("TESTCONN"))
-            sock.close()
-            break
-        except Exception as e:
-            print("There was an error trying to connect. Make sure the connection is working correctly and try again.")
-            print("If the error persists, report it with the following error message:")
-            print(e)
-            print("\n")
-    print("IP found.")
+    ip = input("Enter the IP of the computer you want to send the file to: ")
 
     ready = input("Are you ready to send file {} to IP {}? Enter 'Y' to confirm, or anything else to cancel: ".format(file_name, ip))
     if not (ready == "Y" or ready == "y"):
@@ -50,6 +36,7 @@ def do_send():
         sock.connect((ip, PORT))
     except Exception as e:
         print("Error occured when attempting to connect to IP.")
+        print(e.with_traceback())
         return
 
     with open(file_name, "rb") as f:
@@ -76,7 +63,7 @@ def do_recv():
     except Exception as e:
         print("Something happened, the file might be transferred, maybe an error happened.")
         print("Whatever happened was: ")
-        print(e)
+        print(e.with_traceback())
         
 
 def main():
