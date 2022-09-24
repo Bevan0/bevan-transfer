@@ -2,7 +2,7 @@
 
 **SECURITY WARNING: THIS PROGRAM SENDS FILES UNENCRYPTED THROUGH THE INTERNET! DO NOT SEND SENSITIVE FILES THROUGH IT.**
 
-Bevan Transfer is a simple CLI file transfer system written in Python for single files.
+Bevan Transfer is a simple CLI file transfer system written in Python for single files. It has no dependencies, other than Python 3 (latest version recommended).
 
 ## Usage
 
