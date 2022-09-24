@@ -60,6 +60,11 @@ def do_recv():
         while True:
             a = sock2.recv(1024)
             f.write(bytes(a))
+            if sock2.fileno() == -1:
+                print("Transfer finished. Exiting...")
+                sock.close()
+                f.close()
+                return
     except Exception as e:
         print("Something happened, the file might be transferred, maybe an error happened.")
         print("Whatever happened was: ")
