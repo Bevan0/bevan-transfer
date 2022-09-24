@@ -59,7 +59,7 @@ def do_recv():
     try:
         while True:
             a = sock2.recv(1)
-            if len(a) == 0:
+            if a == None:
                 print("File transferred.")
                 sock2.close()
                 sock.close()
