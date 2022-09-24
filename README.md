@@ -10,7 +10,7 @@ On the receiving computer, run `main.py` and enter `RECV`. Enter the (relative) 
 
 On the sending computer, run `main.py` and enter `SEND`. Enter the (relative) file name & path of the file to be sent. Next, enter the IP address of the receiving computer. Finally, it will confirm the file name and IP address. Enter `Y` to confirm and it will connect and send the file.
 
-Once the file transfer is complete, the sending computer will exit the program. The receiving computer will continue to run but it will not accept additional connections; you can exit with `CTRL+C` / equivalent in your system's CLI.
+Once the file transfer is complete, both the receiving and the sending programs will exit.
 
 ## License
 
