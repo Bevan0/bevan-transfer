@@ -80,7 +80,7 @@ def do_recv():
         
 
 def main():
-    print("InterPC File Transfer\n(C) Copyright 2022 Bevan Ellis\nReleased under the MIT License\n")
+    print("Bevan Transfer\n(C) Copyright 2022 Bevan Ellis\nReleased under the MIT License\n")
     while True:
         action = input("Are you sending (enter 'SEND') or receiving (enter 'RECV') files? ")
         if action == "SEND":
