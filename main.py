@@ -28,7 +28,7 @@ def do_send():
         try:
             sock = socket.socket()
             sock.connect((ip, PORT))
-            sock.send("TESTCONN")
+            sock.send(bytes("TESTCONN"))
             sock.close()
             break
         except Exception as e:
@@ -72,7 +72,7 @@ def do_recv():
     try:
         while True:
             a = sock2.recv(1024)
-            f.write(a)
+            f.write(bytes(a))
     except Exception as e:
         print("Something happened, the file might be transferred, maybe an error happened.")
         print("Whatever happened was: ")
