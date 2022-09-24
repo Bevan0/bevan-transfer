@@ -58,7 +58,7 @@ def do_recv():
     print("Connection received from {}".format(address))
     try:
         while True:
-            a = sock2.recv(1024)
+            a = sock2.recv(1)
             f.write(bytes(a))
             if sock2.fileno() == -1:
                 print("Transfer finished. Exiting...")
