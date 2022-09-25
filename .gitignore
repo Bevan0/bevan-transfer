@@ -2,3 +2,4 @@ test_files/
 build/
 dist/
 bevan_transfer.egg-info/
+venv/
