@@ -6,7 +6,7 @@ Bevan Transfer is a simple CLI file transfer system written in Python 3 for sing
 
 ## Installation
 
-Run `python setup.py install` to install the program; there are no dependencies. The command `bevan-transfer` should become available in your CLI.
+Run `python setup.py install` to install the program; setuptools will automatically install Click if it is not installed. The command `bevan-transfer` should become available in your CLI.
 
 ## Usage
 
