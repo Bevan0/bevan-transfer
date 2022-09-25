@@ -1,6 +1,5 @@
 import click
 import socket
-import sys
 
 PORT = 4545
 
@@ -22,10 +21,12 @@ def do_send(file, ip):
         click.echo("Error occured when attempting to connect to IP.")
         click.echo(e.with_traceback())
         return
+    
+    click.echo("Connected, beginning transfer.")
 
     sock.sendfile(file)
     sock.close()
-    click.echo("File sent. Thank you for transferring.")
+    click.echo("File transferred successfully.")
     file.close()
     return
 
@@ -39,12 +40,12 @@ def do_recv(file):
     click.echo("Ready to accept files.")
     sock.listen(1)
     sock2, address = sock.accept()
-    click.echo("Connection received from {}".format(address))
+    click.echo("Connection received from {}".format(address[0]))
     try:
         while True:
             a = sock2.recv(1)
             if len(a) == 0:
-                click.echo("File transferred.")
+                click.echo("File transferred, exiting.")
                 sock2.close()
                 sock.close()
                 file.close()
